@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.zaza.calculator.Controller">
+   <children>
+      <GridPane layoutX="1.0" layoutY="173.0" prefHeight="407.0" prefWidth="400.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;">
+               <children>
+                  <Label layoutX="44.0" layoutY="26.0" text="\%" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#clearCurrentNumber" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="40.0" layoutY="26.0" onMouseClicked="#clearCurrentNumber" text="CE" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#clear" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2">
+               <children>
+                  <Label layoutX="45.0" layoutY="26.0" onMouseClicked="#clear" text="C" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#clearOneDigit" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3">
+               <children>
+                  <Label layoutX="44.0" layoutY="26.0" onMouseClicked="#clearOneDigit" text="&lt;-" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="40.0" layoutY="26.0" text="1/x" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="38.0" layoutY="26.0" text="x^2" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="28.0" layoutY="26.0" text="sqrt(x)" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#divide" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="48.0" layoutY="26.0" onMouseClicked="#divide" text="/" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonSeven" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonSeven" text="7" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonEight" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonEight" text="8" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonNine" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonNine" text="9" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#multiply" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Label layoutX="45.0" layoutY="26.0" onMouseClicked="#multiply" text="X" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonFour" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonFour" text="4" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonFive" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonFive" text="5" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonSix" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonSix" text="6" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#minus" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Label layoutX="48.0" layoutY="26.0" onMouseClicked="#minus" text="-" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonOne" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonOne" text="1" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonTwo" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonTwo" text="2" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonThree" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonThree" text="3" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#plus" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#plus" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="42.0" layoutY="26.0" text="+/-" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonZero" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#buttonZero" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#buttonDot" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="48.0" layoutY="26.0" onMouseClicked="#buttonDot" text="." textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane onMouseClicked="#equals" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="46.0" layoutY="26.0" onMouseClicked="#equals" text="=" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+      <Pane layoutX="1.0" layoutY="1.0" prefHeight="173.0" prefWidth="400.0" style="-fx-background-color: black; -fx-border-color: white;">
+         <children>
+            <Label fx:id="currentNumber" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="112.0" prefHeight="42.0" prefWidth="390.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="savedNumber" alignment="CENTER_RIGHT" layoutX="2.0" layoutY="67.0" prefHeight="42.0" prefWidth="390.0" textFill="#8d7a7a">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
