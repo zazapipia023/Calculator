@@ -62,27 +62,27 @@
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="1">
+            <Pane onMouseClicked="#buttonDivideOne" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="40.0" layoutY="26.0" text="1/x" textFill="WHITE">
+                  <Label layoutX="40.0" layoutY="26.0" onMouseClicked="#buttonDivideOne" text="1/x" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane onMouseClicked="#buttonSqr" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="38.0" layoutY="26.0" text="x^2" textFill="WHITE">
+                  <Label layoutX="38.0" layoutY="26.0" onMouseClicked="#buttonSqr" text="x^2" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Pane onMouseClicked="#buttonSqrt" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Label layoutX="28.0" layoutY="26.0" text="sqrt(x)" textFill="WHITE">
+                  <Label layoutX="28.0" layoutY="26.0" onMouseClicked="#buttonSqrt" text="sqrt(x)" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>

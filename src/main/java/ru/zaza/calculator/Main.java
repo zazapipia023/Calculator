@@ -26,7 +26,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    // TODO: 0.х | кнопки | при вводе одного числа и нажатия равно в savedNumber выводить только это число
+    // TODO: 0.х | кнопки |
 
     public static void main(String[] args) {
         launch();

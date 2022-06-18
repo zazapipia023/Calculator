@@ -2,7 +2,7 @@ package ru.zaza.calculator;
 
 public class Calculator {
     private String savedNumber = "", currentNumber = "";
-    private String sign, result;
+    private String sign = "", result;
     private boolean isWasEquals = false;
 
     public boolean isWasEquals() {
@@ -34,7 +34,7 @@ public class Calculator {
     public String divide() {
         sign = "/";
         if(isWasEquals) {
-            if(result.contains(".0")) savedNumber = result.substring(0, result.length() - 2);
+            if(result.endsWith(".0")) savedNumber = result.substring(0, result.length() - 2);
             else savedNumber = result;
             isWasEquals = false;
             return savedNumber + " " + sign;
@@ -47,7 +47,7 @@ public class Calculator {
     public String multiply() {
         sign = "*";
         if(isWasEquals) {
-            if(result.contains(".0")) savedNumber = result.substring(0, result.length() - 2);
+            if(result.endsWith(".0")) savedNumber = result.substring(0, result.length() - 2);
             else savedNumber = result;
             isWasEquals = false;
             return savedNumber + " " + sign;
@@ -60,7 +60,7 @@ public class Calculator {
     public String minus() {
         sign = "-";
         if(isWasEquals) {
-            if(result.contains(".0")) savedNumber = result.substring(0, result.length() - 2);
+            if(result.endsWith(".0")) savedNumber = result.substring(0, result.length() - 2);
             else savedNumber = result;
             isWasEquals = false;
             return savedNumber + " " + sign;
@@ -73,7 +73,7 @@ public class Calculator {
     public String plus() {
         sign = "+";
         if(isWasEquals) {
-            if(result.contains(".0")) savedNumber = result.substring(0, result.length() - 2);
+            if(result.endsWith(".0")) savedNumber = result.substring(0, result.length() - 2);
             else savedNumber = result;
             isWasEquals = false;
             return savedNumber + " " + sign;
@@ -84,38 +84,43 @@ public class Calculator {
     }
 
     public String equals() {
-        switch (sign) {
-            case "/":
-                result = String.valueOf(Double.parseDouble(savedNumber) / Double.parseDouble(currentNumber));
-                currentNumber = "";
-                savedNumber = "";
-                isWasEquals = true;
-                if(result.contains(".0")) return result.substring(0, result.length() - 2);
-                else return result;
-            case "*":
-                result = String.valueOf(Double.parseDouble(savedNumber) * Double.parseDouble(currentNumber));
-                currentNumber = "";
-                savedNumber = "";
-                isWasEquals = true;
-                if(result.contains(".0")) return result.substring(0, result.length() - 2);
-                else return result;
-            case "-":
-                result = String.valueOf(Double.parseDouble(savedNumber) - Double.parseDouble(currentNumber));
-                currentNumber = "";
-                savedNumber = "";
-                isWasEquals = true;
-                if(result.contains(".0")) return result.substring(0, result.length() - 2);
-                else return result;
-            case "+":
-                result = String.valueOf(Double.parseDouble(savedNumber) + Double.parseDouble(currentNumber));
-                currentNumber = "";
-                savedNumber = "";
-                isWasEquals = true;
-                if(result.contains(".0")) return result.substring(0, result.length() - 2);
-                else return result;
+        if(savedNumber.isEmpty()) {
+            result = currentNumber;
+            clear();
+            isWasEquals = true;
+            return result;
         }
-        currentNumber = "";
-        savedNumber = "";
+        switch (sign) {
+            case "/" -> {
+                result = String.valueOf(Double.parseDouble(savedNumber) / Double.parseDouble(currentNumber));
+                clear();
+                isWasEquals = true;
+                if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+                else return result;
+            }
+            case "*" -> {
+                result = String.valueOf(Double.parseDouble(savedNumber) * Double.parseDouble(currentNumber));
+                clear();
+                isWasEquals = true;
+                if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+                else return result;
+            }
+            case "-" -> {
+                result = String.valueOf(Double.parseDouble(savedNumber) - Double.parseDouble(currentNumber));
+                clear();
+                isWasEquals = true;
+                if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+                else return result;
+            }
+            case "+" -> {
+                result = String.valueOf(Double.parseDouble(savedNumber) + Double.parseDouble(currentNumber));
+                clear();
+                isWasEquals = true;
+                if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+                else return result;
+            }
+        }
+        clear();
         isWasEquals = true;
         return result;
     }
@@ -123,8 +128,7 @@ public class Calculator {
     public void clear() {
         savedNumber = "";
         currentNumber = "";
-        sign = null;
-        result = null;
+        sign = "";
     }
 
     public void clearCurrentNumber() {
@@ -134,5 +138,32 @@ public class Calculator {
     public String clearOneDigit() {
         currentNumber = currentNumber.substring(0, currentNumber.length() - 1);
         return currentNumber;
+    }
+
+    public String sqrt() {
+        isWasEquals = true;
+        result = String.valueOf(Math.sqrt(Double.parseDouble(currentNumber)));
+        savedNumber = currentNumber;
+        currentNumber = result;
+        if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+        return result;
+    }
+
+    public String sqr() {
+        isWasEquals = true;
+        result = String.valueOf(Math.pow(Double.parseDouble(currentNumber), 2));
+        savedNumber = currentNumber;
+        currentNumber = result;
+        if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+        return result;
+    }
+
+    public String divideOne() {
+        isWasEquals = true;
+        result = String.valueOf(1 / Double.parseDouble(currentNumber));
+        savedNumber = currentNumber;
+        currentNumber = result;
+        if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
+        return result;
     }
 }

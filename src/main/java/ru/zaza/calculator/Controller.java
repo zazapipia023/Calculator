@@ -103,8 +103,7 @@ public class Controller {
     }
 
     public void divide(MouseEvent e) {
-        currentNumber.setText("");
-        savedNumber.setText(calculator.divide());
+        divide();
     }
 
     public void multiply() {
@@ -113,8 +112,7 @@ public class Controller {
     }
 
     public void multiply(MouseEvent e) {
-        currentNumber.setText("");
-        savedNumber.setText(calculator.multiply());
+        multiply();
     }
 
     public void minus() {
@@ -123,8 +121,7 @@ public class Controller {
     }
 
     public void minus(MouseEvent e) {
-        currentNumber.setText("");
-        savedNumber.setText(calculator.minus());
+        minus();
     }
 
     public void plus() {
@@ -133,8 +130,7 @@ public class Controller {
     }
 
     public void plus(MouseEvent e) {
-        currentNumber.setText("");
-        savedNumber.setText(calculator.plus());
+        plus();
     }
 
     public void equals() {
@@ -143,8 +139,7 @@ public class Controller {
     }
 
     public void equals(MouseEvent e) {
-        savedNumber.setText(calculator.getSavedNumber() + " " + calculator.getSign() + " " + calculator.getCurrentNumber() + " =");
-        currentNumber.setText(calculator.equals());
+        equals();
     }
 
     public void clear(MouseEvent e) {
@@ -166,5 +161,20 @@ public class Controller {
     public void clearOneDigit() {
         currentNumber.setText(calculator.clearOneDigit());
         if(currentNumber.getText().equals("")) currentNumber.setText("0");
+    }
+
+    public void buttonSqrt(MouseEvent e) {
+        currentNumber.setText(calculator.sqrt());
+        savedNumber.setText("sqrt(" + calculator.getSavedNumber() + ")");
+    }
+
+    public void buttonSqr(MouseEvent e) {
+        currentNumber.setText(calculator.sqr());
+        savedNumber.setText("sqr(" + calculator.getSavedNumber() + ")");
+    }
+
+    public void buttonDivideOne(MouseEvent e) {
+        currentNumber.setText(calculator.divideOne());
+        savedNumber.setText("1 / " + calculator.getSavedNumber());
     }
 }
