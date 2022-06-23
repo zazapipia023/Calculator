@@ -55,8 +55,12 @@ public class Controller {
         currentNumber.setText(calculator.addDigit("9"));
     }
 
+    public void buttonDot() {
+        currentNumber.setText(calculator.addDigit("."));
+    }
+
     public void buttonDot(MouseEvent e) {
-        if(String.valueOf(calculator.getCurrentNumber()).matches("\\d+")) currentNumber.setText(calculator.addDigit("."));
+        currentNumber.setText(calculator.addDigit("."));
     }
 
     public void onKeyPressed(KeyEvent keyEvent) {
@@ -75,7 +79,7 @@ public class Controller {
     public void pressSign(String sign) {
         switch (sign) {
             case ".":
-                if(String.valueOf(calculator.getCurrentNumber()).matches("\\d+")) currentNumber.setText(calculator.addDigit("."));
+                buttonDot();
                 break;
             case "/":
                 divide();
@@ -176,5 +180,9 @@ public class Controller {
     public void buttonDivideOne(MouseEvent e) {
         currentNumber.setText(calculator.divideOne());
         savedNumber.setText("1 / " + calculator.getSavedNumber());
+    }
+
+    public void buttonPlusMinus(MouseEvent e) {
+        currentNumber.setText(calculator.plusMinus());
     }
 }

@@ -1,9 +1,13 @@
 package ru.zaza.calculator;
 
 public class Calculator {
-    private String savedNumber = "", currentNumber = "";
+    private String savedNumber = "", currentNumber = "0";
     private String sign = "", result;
-    private boolean isWasEquals = false;
+    private boolean isWasEquals = false, isPositive = true;
+
+    public boolean isPositive() {
+        return isPositive;
+    }
 
     public boolean isWasEquals() {
         return isWasEquals;
@@ -26,8 +30,13 @@ public class Calculator {
     }
 
     public String addDigit(String digit) {
+        if(currentNumber.contains(".") && digit.equals(".")) return currentNumber;
         isWasEquals = false;
-        currentNumber += digit;
+        if(!currentNumber.equals("0")) {
+            currentNumber += digit;
+        }
+        if(currentNumber.equals("0") && digit.equals(".")) currentNumber = currentNumber + digit;
+        if(currentNumber.equals("0")) currentNumber = digit;
         return currentNumber;
     }
 
@@ -40,7 +49,7 @@ public class Calculator {
             return savedNumber + " " + sign;
         }
         savedNumber = currentNumber;
-        currentNumber = "";
+        currentNumber = "0";
         return savedNumber + " " + sign;
     }
 
@@ -53,7 +62,7 @@ public class Calculator {
             return savedNumber + " " + sign;
         }
         savedNumber = currentNumber;
-        currentNumber = "";
+        currentNumber = "0";
         return savedNumber + " " + sign;
     }
 
@@ -66,7 +75,7 @@ public class Calculator {
             return savedNumber + " " + sign;
         }
         savedNumber = currentNumber;
-        currentNumber = "";
+        currentNumber = "0";
         return savedNumber + " " + sign;
     }
 
@@ -79,7 +88,7 @@ public class Calculator {
             return savedNumber + " " + sign;
         }
         savedNumber = currentNumber;
-        currentNumber = "";
+        currentNumber = "0";
         return savedNumber + " " + sign;
     }
 
@@ -165,5 +174,11 @@ public class Calculator {
         currentNumber = result;
         if (result.endsWith(".0")) return result.substring(0, result.length() - 2);
         return result;
+    }
+
+    public String plusMinus() {
+        if(currentNumber.contains("-")) currentNumber = currentNumber.substring(1);
+        else currentNumber = "-" + currentNumber;
+        return currentNumber;
     }
 }

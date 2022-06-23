@@ -26,15 +26,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;">
-               <children>
-                  <Label layoutX="44.0" layoutY="26.0" text="\%" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
+            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" />
             <Pane onMouseClicked="#clearCurrentNumber" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.columnIndex="1">
                <children>
                   <Label layoutX="40.0" layoutY="26.0" onMouseClicked="#clearCurrentNumber" text="CE" textFill="WHITE">
@@ -206,9 +198,9 @@
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="5">
+            <Pane onMouseClicked="#buttonPlusMinus" prefHeight="200.0" prefWidth="165.0" style="-fx-background-color: black; -fx-border-color: white;" GridPane.rowIndex="5">
                <children>
-                  <Label layoutX="42.0" layoutY="26.0" text="+/-" textFill="WHITE">
+                  <Label layoutX="42.0" layoutY="26.0" onMouseClicked="#buttonPlusMinus" text="+/-" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>

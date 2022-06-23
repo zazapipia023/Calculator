@@ -26,7 +26,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    // TODO: 0.х | кнопки |
+    // TODO: кнопки |
 
     public static void main(String[] args) {
         launch();
